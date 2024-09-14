@@ -1,0 +1,63 @@
+/* "*" is applied to whole html file */
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    text-align: center;
+}
+
+nav {
+    background-color: #333;
+    /* not sure what it is but super important for this nav example */
+    overflow: hidden;
+}
+
+/* links styles for nav bar */
+
+nav a {
+    color: #f2f2f2;
+    float: left;
+    /* changes inline elements to block types */
+    display: block;
+    padding: 14px 16px;
+    /* gets rid of link underline */
+    text-decoration: none;
+    text-align: center;
+}
+
+/* notice the " " and ":" to select */
+
+nav a:hover {
+    /* reverses the text/background colour when hovering */
+    color: #333;
+    background-color: #f2f2f2;
+}
+
+body {
+    margin: 0px;
+    /* background-color: powderblue; */
+}
+
+main {
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+footer {
+    text-align: center;
+}
+
+/* necessary for webpage to be "responsive" */
+
+@media screen and (max-width: 550px) {
+    #center {
+        width: 100%;
+    }
+    nav a {
+        width: 100%;
+        float: none !important;
+    }
+}
