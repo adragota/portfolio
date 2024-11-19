@@ -41,15 +41,9 @@ nav {
 
 .nav-links {
     display: flex;  /* Align links horizontally */
-    flex-direction: column;             /* Stack links vertically */
     gap: 15px;      /* Add spacing between links */
     overflow: hidden; /* Prevent content overflow */
-    max-height: 0;                      /* Initially collapsed */
-    transition: max-height 1.9s ease-out; /* Smooth transition effect */
-}
-
-.nav-links.active {
-    max-height: 500px;                  /* Adjust to fit the expanded menu content */
+    transition: max-height 0.9s ease-out; /* Add smooth transition */
 }
 
 .nav-links a {
