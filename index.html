@@ -1,67 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- head tag -->
+<!-- Head Section -->
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Potfolio</title>
+    <title>Andrew's Portfolio</title>
 
-    <!-- link to external stylesheet -->
+    <!-- External Stylesheet -->
     <link rel="stylesheet" href="./style/style.css">
+
+    <!-- External JavaScript -->
+    <script src="./code/script.js"></script>
 </head>
 
-<!-- body tag -->
+<!-- Body Section -->
 
 <body>
-    <!-- header tag -->
-    <header>
-        <!-- header text using h1 -->
-        <h1>
-            Welcome
-        </h1>
-    </header>
 
-    <!-- nav tag -->
+    <!-- Navigation Section -->
     <nav>
-        <a href="#div1">skills</a>
-
-        <a href="#div2">works</a>
-
-        <a href="#div3">about</a>
+        <div class="nav-title">Andrew's Portfolio</div>
+        <button class="hamburger-menu" aria-label="Toggle navigation">
+            ☰
+        </button>
+        <div class="nav-links">
+            <a href="#div3">About</a>
+            <a href="#div1">Skills</a>
+            <a href="#div2">Works</a>
+        </div>
     </nav>
 
-    <!-- main tag -->
+    <!-- Main Content -->
     <main>
 
-        <div id="div1">
-            <p>
-                div 1 skills
-            </p>
-        </div>
+        <!-- About Section -->
+        <section id="div3">
+            <h2>Welcome!</h2>
+            <p>Hello! My name is Andrew, and I am a passionate software developer specializing in creating innovative web and software solutions. With a strong foundation in HTML, CSS, and JavaScript, I love building user-friendly and dynamic web experiences.</p>
+            <p>Feel free to explore my portfolio to learn more about my skills, projects, and experience. Let's create something amazing together!</p>
+        </section>
 
-        <div id="div2">
-            <p>
-                div 2 works
-            </p>
-        </div>
+        <!-- Skills Section -->
+        <section id="div1">
+            <h2>Skills</h2>
+            <p>div 1 skills</p>
+        </section>
 
-        <div id="div3">
-            <p>
-                div 3 about
-            </p>
-        </div>
+        <!-- Works Section -->
+        <section id="div2">
+            <h2>Works</h2>
+            <p>div 2 works</p>
+        </section>
+
     </main>
 
-    <div></div>
-
-    <!-- footer tag -->
+    <!-- Footer Section -->
     <footer>
-        <h5>
-            Copyright © Andrew's Portfolio 2024-09-13
-        </h5>
+        <h5>© andrewanca.com 2024</h5>
     </footer>
+
 </body>
 
 </html>

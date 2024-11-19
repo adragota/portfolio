@@ -1,59 +1,92 @@
-/* "*" is applied to whole html file */
-
+/* ========== Global Styles ========== */
 * {
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 html {
-    scroll-behavior: smooth; /* Enables smooth scrolling */
-}
-
-header {
-    text-align: center;
-}
-
-nav {
-    background-color: #333;
-    /* not sure what it is but super important for this nav example */
-    overflow: hidden;
-    float: right;
-}
-
-/* links styles for nav bar */
-
-nav a {
-    color: #f2f2f2;
-    float: left;
-    /* changes inline elements to block types */
-    display: block;
-    padding: 14px 16px;
-    /* gets rid of link underline */
-    text-decoration: none;
-    text-align: center;
-}
-
-/* notice the " " and ":" to select */
-
-nav a:hover {
-    /* reverses the text/background colour when hovering */
-    color: #333;
-    background-color: #f2f2f2;
+    scroll-behavior: smooth;    /* Enables smooth scrolling */
 }
 
 body {
-    margin: 0px;
-    /* background-color: powderblue; */
+    margin: 0;
+    background-color: rgb(214, 230, 176);
 }
 
+/* ========== Header Section ========== */
+header {
+    text-align: center; 
+    padding-top: 80px;      /* Push content below the nav bar */
+}
+
+/* ========== Navigation Bar ========== */
+nav {
+    background-color: #333;
+    display: flex;                      /* Enable Flexbox */
+    justify-content: space-between;     /* Space between title and links */
+    align-items: center;                /* Vertically align items */
+    padding: 0 20px;                    /* Add padding for spacing */
+    position: fixed;                    /* Fix at the top */
+    width: 100%;                        /* Full-width nav bar */
+    height: 60px;                       /* Set a consistent height */
+    z-index: 1000;                      /* Ensure it stays above other content */
+}
+
+.nav-title {
+    color: #f2f2f2;           /* Title text color */
+    font-size: 1.5em;           /* Slightly larger font */
+    font-weight: bold;          /* Make it bold */
+    text-transform: uppercase;  /* Optional: Capitalize text */
+}
+
+.nav-links {
+    display: flex;  /* Align links horizontally */
+    flex-direction: column;             /* Stack links vertically */
+    gap: 15px;      /* Add spacing between links */
+    overflow: hidden; /* Prevent content overflow */
+    max-height: 0;                      /* Initially collapsed */
+    transition: max-height 1.9s ease-out; /* Smooth transition effect */
+}
+
+.nav-links.active {
+    max-height: 500px;                  /* Adjust to fit the expanded menu content */
+}
+
+.nav-links a {
+    color: #f2f2f2;                                   /* Link text color */
+    text-decoration: none;                              /* Remove underline */
+    padding: 10px 15px;                                 /* Add padding to links */
+    display: inline-block;                              /* Ensure links remain inline */
+    text-align: center;                                 /* Center text in each link */
+    transition: background-color 0.3s, color 0.3s;      /* Smooth hover effect */
+}
+
+.nav-links a:hover {
+    background-color: #f2f2f2;      /* Light background on hover */
+    color: #333;                    /* Dark text on hover */
+}
+
+/* Hamburger Menu Button */
+.hamburger-menu {
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    color: #f2f2f2;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* ========== Main Content ========== */
 main {
     padding: 10px;
     margin-bottom: 30px;
-    height: 300vh; /* 3 divs each 100% of viewport height */
+    height: 300vh;      /* 3 divs each 100% of viewport height */
 }
 
-#div1, #div2, #div3 {
-    height: 100vh; /* Each div takes up full viewport height */
+#div1,
+#div2,
+#div3 {
+    height: 100vh;  /* Each div takes up full viewport height */
 }
 
 #div1 {
@@ -65,22 +98,60 @@ main {
 }
 
 #div3 {
-    background-color: palevioletred;
+    height: 100vh; /* Full viewport height */
+    background-color: palevioletred; /* Subtle background color */
+    color: white; /* White text for contrast */
+    display: flex; /* Flexbox for centering content */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: left; /* Center-align text */
 }
 
+#div3 h2 {
+    font-size: 2.5em; /* Larger font for heading */
+}
 
+#div3 p {
+    font-size: 1.2em; /* Slightly larger font for readability */
+    max-width: 600px; /* Limit width for better readability */
+    line-height: 1.5; /* Improve line spacing */
+}
+
+/* ========== Footer Section ========== */
 footer {
     text-align: center;
 }
 
-/* necessary for webpage to be "responsive" */
-
-@media screen and (max-width: 550px) {
-    #center {
+/* ========== Media Queries (Responsive Design) ========== */
+/* Responsive Styles */
+@media screen and (max-width: 500px) {
+    .nav-links {
+        display: none; /* Hide links initially */
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        right: 0;
         width: 100%;
+        text-align: center;
+        gap: 0;
     }
-    nav a {
-        width: 100%;
-        float: none !important;
+
+    .nav-links a {
+        padding: 15px;
+        border-bottom: 1px solid #444;
+    }
+
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    .hamburger-menu {
+        display: block; /* Show hamburger menu button */
+    }
+
+    .nav-links.active {
+        display: flex; /* Show links when active */
     }
 }
